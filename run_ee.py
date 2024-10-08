@@ -49,6 +49,7 @@ for terrain in terrains:
 
     X = design_matrix(x, y, degree=5)
     z = terrain.flatten()
+    z = (z - np.mean(z)) / np.var(z) # Scale data
 
     for reg in regs:
 
